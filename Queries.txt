@@ -1,0 +1,59 @@
+SHOW TABLES
+DESC table_name
+Exit
+
+/*******************************
+*       Simple Queries         *
+*******************************/
+
+SELECT {} [Student]
+SELECT {} [Teacher]
+SELECT {*} [Dept]
+SELECT {*} [Course]
+PROJECT {Name,Grade}[Student]
+UNION [Teacher,Staff]
+SDIFF [Teacher,Staff]
+CART [Teacher, Course]
+
+** Renames Teacher To Faculty **
+RENAME{Faculty}[Teacher]
+
+** Renames Teacher TO Faculty while renaming its attributes **
+RENAME{Faculty|ProfName,ProfID,DeptID,Sex}[Teacher]
+
+SELECT {(Sex=='F' && !isHosteler) || Grade > 8 && Grade < 9}[Student]
+
+
+/*******************************
+*    Simple Nested Queries     *
+*******************************/
+
+** Display Names and IDs of Students & Teachers **
+UNION [RENAME{Student|Name,ID}[PROJECT{Name,Roll}[Student]],PROJECT{Name,ID}[Teacher]]
+
+** Students that are not Female **
+SDIFF[Student,SELECT{Sex=='F'}[Student]]
+
+** Returns Empty Set**  
+SDIFF [Teacher,Teacher]
+
+CART[SELECT{Grade>9}[Student],Course]
+
+
+
+/*******************************
+*   Complex Nested Queries     *
+*******************************/
+
+
+** Department of all Students**
+PROJECT  {Name,Roll,DeptCode,Address} [ SELECT {DeptID=ID} [CART [Student, PROJECT {ID,DeptCode,Address}[Dept] ] ] ]
+
+
+** Select Teachers along with Courses they teach and their Dept name **
+PROJECT {Name,ID,DName,CName,DeptCode,Credits} [ SELECT {DeptID=DID} [ CART[ SELECT {ID==Faculty} [CART[Teacher,Course]] , RENAME {Dept|DID,DName,DeptCode,Address}[Dept]  ]  ]  ]
+
+** Select Student With Maximum Grade**
+SDIFF [ PROJECT {Name} [Student] , PROJECT {Name} [  SELECT {Grade < SGrade} [CART [ Student , RENAME {S|Sname,SRoll,SSEX,SDeptID,SGrade,SisHosteler}[Student] ] ] ] ]
+
+

@@ -1,0 +1,96 @@
+<Table>
+Student
+<Schema>
+Name,String
+Roll,Int
+Sex,Char
+DeptID,Int
+Grade,Double
+isHosteler,Bool
+</Schema>
+Arpit Singh|8|F|1010|8.94|False
+Ayush Shrivastava|14|M|1001|9.99|True
+Manish Garg|3|M|1010|6.91|True
+Ujjawal Singh|4|M|1021|7.03|True
+Shivalika Malik|5|F|1026|8.22|False
+Babloo Kumar|11|M|1005|8.2|True
+Akash Sharma|1|M|1001|8.55|True
+Shivani Melhorta|2|F|1005|9.12|False
+Rupesh Rai|6|M|1045|8.99|True
+Minali Mishra|7|F|1026|9.03|True
+Divyam Patil|9|M|1001|6.43|True
+</Table>
+
+<Table>
+Teacher
+<Schema>
+Name, String
+ID, Int
+DeptID, Int
+Sex, Char
+</Schema>
+Ayush Mishra|1402|1001|M
+Akash Shrivastava|4321|1005|M
+Swati Ney|2354|1010|F
+Sparsh Pal|4365|1010|M
+Srishti Jain|1245|1045|F
+Shriya Patil|4567|1021|F
+Manish Kumar|4722|1026|M
+Ruchi Khanna|6453|1026|F
+Devang Rai|8942|1001|M
+Devarth Bhatnagar|8924|1021|M
+</Table>
+
+<Table>
+Staff
+<Schema>
+Name, String
+ID, Int
+DeptID, Int
+Sex, Char
+</Schema>
+Rohit Mittal|1423|1001|M
+Monica Singh|1234|1026|F
+</Table>
+
+<Table>
+Dept
+<Schema>
+ID, Int
+Name, String
+DeptCode, String
+Address, String
+</Schema>
+1001|Computer Sc. And Engineering|CSE|Block No. 4, Before Cafeteria, IIT BHU
+1005|Chemical Engineering|CHE|Block No. 10, ABLT, IIT BHU
+1010|Mechanical Engineering|MEC|Block No. 28, Behind Lecture Complex, IIT BHU
+1021|Civil Engineering|CIV|Civil Building, Before Library, IIT BHU
+1026|Electronics Engineering|ECE|First Floor, Metcalfe House, IIT BHU
+1045|Electrical Engineering|EEE|Block No. 2, Behind Rajputana Round, IIT BHU
+
+</Table>
+
+<Table>
+Course
+<Schema>
+CID, Int
+CName, String
+Faculty,INT
+Credits, Int
+</Schema>
+1203|Algorithms|1402|13
+2301|Machine Learning|1402|8
+4381|System Labs|1245|15
+4353|Transmission Electricity|1245|8
+4441|Digital Circuits|4722|10
+6435|Circtui Architecture|6453|5
+7653|Water Management|4567|9
+6784|Road Engineering|4567|13
+2354|Material Engineering|4321|13
+5075|Chemical Composition|4321|7
+7024|Rotor Motion|2354|7
+2300|Mechanics|4365|14
+</Table>
+
+	
+
