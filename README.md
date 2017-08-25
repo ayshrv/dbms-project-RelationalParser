@@ -1,8 +1,5 @@
 # Implementation of Relational Algebra functions
 
---------
-
-
 ### Aim of the Project
 
 To write a program in C++ to implement Relational Algebra functions present in DBMS.
@@ -54,7 +51,7 @@ Same is for `PROJECT`, `RENAME`, `UNION`, `CART`, `SDIFF`.
 
 #### Details of Operations
 
-1. `SELECT` Operation:
+##### 1. `SELECT` Operation:
 The basic structure of 'SELECT' query is
 ```
 SELECT { Predicate } [ Table ]
@@ -89,19 +86,19 @@ Sample query for SELECT operation:
 SELECT { Age>20 && Sex!=’M’ } [ Student ]
 ```
 
-2. `PROJECT` Operation:
+##### 2. `PROJECT` Operation:
 ```
 PROJECT {Attr1, Attr2, Attr3, ... } [ Table ]
 ```
 **{}** should enclose the attributes and attributes should be separated by comma ‘*,*’. Table should be provided in **[ ]**. Projection of attributes not existent in Table will result in error.
 
-3. `RENAME` Operation:
+##### 3. `RENAME` Operation:
 ```
 RENAME {newTableName} [ Table ]
 RENAME {newTableName | Attr1,Attr2,Attr3, ... } [ Table ]
 ```
 
-4. `UNION` Operation:
+##### 4. `UNION` Operation:
 ```
 UNION [ TableA , TableB ]
 ```
@@ -109,7 +106,7 @@ Tables should be separated by a comma and tables should be enclosed in Square Br
 
 Tables should have exactly same schema i.e., names and datatypes of attributes and the order in which they are given should be same, otherwise it results in error.
 
-5. `CART` Operation:
+##### 5. `CART` Operation:
 
 Cartesian Product has been abbreviated to `CART`.
 ```
@@ -118,7 +115,7 @@ CART [ TableA , TableB ]
 
 **TableA** and **TableB** should have completely disjoint schemas. If an user wants to product two tables with same name of attributes, then he/she must rename atleast one table to make this condition satisfy.
 
-6. `SDIFF` Operation:
+##### 6. `SDIFF` Operation:
 
 Set Difference has been abbreviated as `SDIFF`.
 ```
