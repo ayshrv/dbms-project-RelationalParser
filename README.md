@@ -10,6 +10,10 @@ To write a program in C++ to implement Relational Algebra functions present in D
 
 The program implements the following Relational Algebra functions:
 
+
+
+
+
 1. SELECT
 
 2. PROJECT
